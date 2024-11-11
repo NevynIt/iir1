@@ -76,7 +76,7 @@ namespace RBJ {
 			state.reset();
 		}
 		/// gets the delay lines (=state) of the filter
-		const DirectFormI& getState() {
+		const DirectFormI& getState() const {
 			return state;
 		}
 	private:

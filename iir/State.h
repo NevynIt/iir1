@@ -78,7 +78,7 @@ namespace Iir {
 		return out;
 	}
 	
-	protected:
+	public:
 	double m_x2 = 0.0; // x[n-2]
 	double m_y2 = 0.0; // y[n-2]
 	double m_x1 = 0.0; // x[n-1]

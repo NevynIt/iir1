@@ -26,10 +26,10 @@ if(IIR1_BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
-option(IIR1_BUILD_DEMO "Build demo" ON)
-if(IIR1_BUILD_DEMO)
-  add_subdirectory(demo)
-endif()
+# option(IIR1_BUILD_DEMO "Build demo" ON)
+# if(IIR1_BUILD_DEMO)
+#   add_subdirectory(demo)
+# endif()
 
 if (MSVC)
   add_compile_options(/W4)
@@ -64,6 +64,11 @@ set(LIBINCLUDE
 
 add_library(iir SHARED ${LIBSRC})
 add_library(iir::iir ALIAS iir)
+
+set (_GLIBCXX_USE_C99_COMPLEX 0)
+target_compile_definitions(iir PUBLIC
+_GLIBCXX_USE_C99_COMPLEX=0
+)
 
 target_compile_features(iir PUBLIC cxx_std_11)
 

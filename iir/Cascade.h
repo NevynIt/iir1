@@ -115,7 +115,9 @@ namespace Iir {
 
 	public:
 	CascadeStages() = default;
-		
+
+        static const int template_MaxStages = MaxStages;
+        using template_StateType = StateType;
 		
         public:
         /**
@@ -172,7 +174,7 @@ namespace Iir {
 		return s;
         }
         
-        private:
+        public:
         Biquad m_stages[MaxStages] = {};
         StateType m_states[MaxStages] = {};
         };
